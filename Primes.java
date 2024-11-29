@@ -8,7 +8,7 @@ public class Primes {
         }
         double max = Math.sqrt(n);
         for(int i = 2; i <= max; i++) {
-            if(isPrime[i]) {
+            if(isPrime[i - 2]) {
                 for(int j = 2 * i; j <= n; j+= i) {
                     isPrime[j-2] = false;
                 }
