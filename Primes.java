@@ -6,9 +6,12 @@ public class Primes {
         for(int i = 0; i < n - 1; i++) {
             isPrime[i] = true;
         }
-        for(int i = 2; i <= n; i++) {
-            for(int j = 2 * i; j <= n; j+= i) {
-                isPrime[j-2] = false;
+        double max = Math.sqrt(n);
+        for(int i = 2; i <= max; i++) {
+            if(isPrime[i]) {
+                for(int j = 2 * i; j <= n; j+= i) {
+                    isPrime[j-2] = false;
+                }
             }
         }
         System.out.println("Prime numbers up to " + n + ":");
